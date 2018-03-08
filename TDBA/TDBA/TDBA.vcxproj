@@ -19,7 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Room.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2793417e-f2f0-49a6-8f29-5096010449b1}</ProjectGuid>
