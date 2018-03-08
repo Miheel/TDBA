@@ -1,6 +1,5 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
-
 #include <SFML\Graphics.hpp>
 #include "Bullet.h"
 #include "Entity.h"
@@ -20,18 +19,6 @@ private:
 	////void expand();
 	////void initiate(int from = 0);
 	////void freeMemory();
-
-	//// Animation variables
-	//sf::Vector2i boddyCurrentKeyFrame;
-	//sf::Vector2i boddyKeyFrameSize;
-	//sf::Vector2i headCurrentKeyFrame;
-	//sf::Vector2i headKeyFrameSize;
-
-	//int headSpriteSheetWidth;
-	int boddySpriteSheetWidth;
-	//float mAnimationSpeed;
-	//float mKeyFrameDuration;
-
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif
