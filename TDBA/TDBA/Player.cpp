@@ -14,7 +14,7 @@ Player::Player()
 	//Head
 	spriteSheet1.setTexture(texture);
 	spriteSheet1.setTextureRect(sf::IntRect(0, 25, 28, 25));
-	spriteSheet1.setPosition(205.0f, 180.0f);
+	spriteSheet1.setPosition(194.5f, 183.0f);
 
 	// Initialise animation variables head.
 	currentKeyFrame1 = sf::Vector2i(0, 25);
@@ -25,12 +25,12 @@ Player::Player()
 #pragma region Boddy Texture
 	//Boddy
 	spriteSheet2.setTexture(texture);
-	spriteSheet2.setTextureRect(sf::IntRect(0, 76, 34, 19));
+	spriteSheet2.setTextureRect(sf::IntRect(0, 76, 19, 19));
 	spriteSheet2.setPosition(200.0f, 200.0f);
 
 	// Initialise animation variables boddy.
 	currentKeyFrame2 = sf::Vector2i(0, 76);
-	keyFrameSize2 = sf::Vector2i(34, 19);
+	keyFrameSize2 = sf::Vector2i(19, 19);
 	spriteSheetWidth2 = 5;
 
 #pragma endregion
@@ -190,7 +190,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-	target.draw(spriteSheet1, states);
 	target.draw(spriteSheet2, states);
+	target.draw(spriteSheet1, states);
 	target.getSize().x;
 }
