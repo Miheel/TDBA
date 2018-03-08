@@ -12,9 +12,7 @@ public:
 	void Update(float dt, sf::RenderTarget &target);
 	
 private:
-	//sf::Texture mTexture;
-	//sf::Sprite boddySpriteSheet;
-	//sf::Sprite headSpriteSheet;
+	
 	float movementSpeed = 180.0f;
 	////Bullet**bullet;
 	////int capacity;
@@ -24,8 +22,8 @@ private:
 	////void freeMemory();
 
 	//// Animation variables
-	sf::Vector2i boddyCurrentKeyFrame;
-	sf::Vector2i boddyKeyFrameSize;
+	//sf::Vector2i boddyCurrentKeyFrame;
+	//sf::Vector2i boddyKeyFrameSize;
 	//sf::Vector2i headCurrentKeyFrame;
 	//sf::Vector2i headKeyFrameSize;
 

@@ -12,35 +12,27 @@ Player::Player()
 	}
 #pragma region Head Texture
 	//Head
-	spriteSheet.setTexture(texture);
-	spriteSheet.setTextureRect(sf::IntRect(0, 25, 28, 25));
-	spriteSheet.setPosition(205.0f, 180.0f);
+	spriteSheet1.setTexture(texture);
+	spriteSheet1.setTextureRect(sf::IntRect(0, 25, 28, 25));
+	spriteSheet1.setPosition(205.0f, 180.0f);
 
 	// Initialise animation variables head.
-	CurrentKeyFrame = sf::Vector2i(0, 25);
-	KeyFrameSize = sf::Vector2i(28, 25);
-	SpriteSheetWidth = 8;
+	currentKeyFrame1 = sf::Vector2i(0, 25);
+	keyFrameSize1 = sf::Vector2i(28, 25);
+	spriteSheetWidth1 = 8;
 #pragma endregion
 
 #pragma region Boddy Texture
 	//Boddy
-	spriteSheet.setTexture(texture);
-	spriteSheet.setTextureRect(sf::IntRect(0, 76, 34, 19));
-	spriteSheet.setPosition(200.0f, 200.0f);
+	spriteSheet2.setTexture(texture);
+	spriteSheet2.setTextureRect(sf::IntRect(0, 76, 34, 19));
+	spriteSheet2.setPosition(200.0f, 200.0f);
 
 	// Initialise animation variables boddy.
-	boddyCurrentKeyFrame = sf::Vector2i(0, 76);
-	boddyKeyFrameSize = sf::Vector2i(34, 19);
-	boddySpriteSheetWidth = 5;
+	currentKeyFrame2 = sf::Vector2i(0, 76);
+	keyFrameSize2 = sf::Vector2i(34, 19);
+	spriteSheetWidth2 = 5;
 
-	////Boddy
-	//boddySpriteSheet.setTexture(texture);
-	//boddySpriteSheet.setTextureRect(sf::IntRect(0, 76, 34, 19));
-	//boddySpriteSheet.setPosition(200.0f, 200.0f);
-	//// Initialise animation variables boddy.
-	//boddyCurrentKeyFrame = sf::Vector2i(0, 76);
-	//boddyKeyFrameSize = sf::Vector2i(34, 19);
-	//boddySpriteSheetWidth = 5;
 #pragma endregion
 
 	mAnimationSpeed = 0.2f;
@@ -57,62 +49,62 @@ void Player::Update(float dt, sf::RenderTarget &target)
 	sf::Vector2f direction(0.0f, 0.0f);
 
 	mKeyFrameDuration += dt;
-	CurrentKeyFrame.y = 1;
-	//boddyCurrentKeyFrame.y = 4;
+	currentKeyFrame1.y = 1;
+	currentKeyFrame2.y = 4;
 
 
 	// Handle input from arrow keys and update direction and animation
 #pragma region key move input
-	if (spriteSheet.getPosition().x >= 0 && spriteSheet.getPosition().x >= 0)
+	if (spriteSheet1.getPosition().x >= 0 && spriteSheet2.getPosition().x >= 0)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
 			direction.x = -1.0f;
 			mKeyFrameDuration += dt;
-			CurrentKeyFrame.x = 6;
-			boddyCurrentKeyFrame.y = 4;
+			currentKeyFrame1.x = 6;
+			currentKeyFrame2.y = 4;
 		}
 	}
-	if (boddySpriteSheet.getPosition().x + boddySpriteSheet.getLocalBounds().width <= target.getSize().x &&
-		spriteSheet.getPosition().x + spriteSheet.getLocalBounds().width <= target.getSize().x)
+	if (spriteSheet2.getPosition().x + spriteSheet2.getLocalBounds().width <= target.getSize().x &&
+		spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width <= target.getSize().x)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			direction.x = 1.0f;
 			mKeyFrameDuration += dt;
-			CurrentKeyFrame.x = 2;
+			currentKeyFrame1.x = 2;
 			//boddyCurrentKeyFrame.y = 4;
 		}
 	}
 
-	if (boddySpriteSheet.getPosition().y >= 0 && spriteSheet.getPosition().y >= 0)
+	if (spriteSheet2.getPosition().y >= 0 && spriteSheet1.getPosition().y >= 0)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
 			direction.y = -1.0f;
 			mKeyFrameDuration += dt;
-			CurrentKeyFrame.x = 4;
-			boddyCurrentKeyFrame.y = 4;
+			currentKeyFrame1.x = 4;
+			currentKeyFrame2.y = 4;
 		}
 	}
 
-	if (boddySpriteSheet.getPosition().y + boddySpriteSheet.getLocalBounds().height <= target.getSize().y &&
-		spriteSheet.getPosition().y + spriteSheet.getLocalBounds().height <= target.getSize().y)
+	if (spriteSheet2.getPosition().y + spriteSheet2.getLocalBounds().height <= target.getSize().y &&
+		spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height <= target.getSize().y)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
 			direction.y = 1.0f;
 			mKeyFrameDuration += dt;
-			CurrentKeyFrame.x = 0;
-			boddyCurrentKeyFrame.y = 4;
+			currentKeyFrame1.x = 0;
+			currentKeyFrame2.y = 4;
 		}
 	}
 	if (direction.y == 0.0f && direction.x == 0.0f)
 	{
-		CurrentKeyFrame.x = 0;
+		currentKeyFrame1.x = 0;
 	}
-	boddySpriteSheet.move(direction * movementSpeed * dt);
-	spriteSheet.move(direction * movementSpeed * dt);
+	spriteSheet1.move(direction * movementSpeed * dt);
+	spriteSheet2.move(direction * movementSpeed * dt);
 #pragma endregion
 
 //#pragma region key shoot input
@@ -151,16 +143,16 @@ void Player::Update(float dt, sf::RenderTarget &target)
 		{
 			headCurrentKeyFrame.x = 0;
 		}*/
-		spriteSheet.setTextureRect(sf::IntRect(CurrentKeyFrame.x*KeyFrameSize.x,
-			CurrentKeyFrame.y*KeyFrameSize.y, KeyFrameSize.x, KeyFrameSize.y));
+		spriteSheet1.setTextureRect(sf::IntRect(currentKeyFrame1.x*keyFrameSize1.x,
+			currentKeyFrame1.y*keyFrameSize1.y, keyFrameSize1.x, keyFrameSize1.y));
 
-		boddyCurrentKeyFrame.x++;
+		currentKeyFrame2.x++;
 
-		if (boddyCurrentKeyFrame.x >= boddySpriteSheetWidth)
-			boddyCurrentKeyFrame.x = 0;
+		if (currentKeyFrame2.x >= spriteSheetWidth2)
+			currentKeyFrame2.x = 0;
 
-		boddySpriteSheet.setTextureRect(sf::IntRect(boddyCurrentKeyFrame.x *boddyKeyFrameSize.x,
-			boddyCurrentKeyFrame.y * boddyKeyFrameSize.y, boddyKeyFrameSize.x, boddyKeyFrameSize.y));
+		spriteSheet2.setTextureRect(sf::IntRect(currentKeyFrame2.x *keyFrameSize2.x,
+			currentKeyFrame2.y * keyFrameSize2.y, keyFrameSize2.x, keyFrameSize2.y));
 		mKeyFrameDuration = 0.0f;
 	}
 #pragma endregion
@@ -198,7 +190,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-	target.draw(boddySpriteSheet, states);
-	target.draw(spriteSheet, states);
+	target.draw(spriteSheet1, states);
+	target.draw(spriteSheet2, states);
 	target.getSize().x;
 }

@@ -5,12 +5,16 @@ class Entity : public sf::Drawable
 {
 public:
 	sf::Texture texture;
-	sf::Sprite spriteSheet;
+	sf::Sprite spriteSheet1;
+	sf::Sprite spriteSheet2;
 
-	sf::Vector2i CurrentKeyFrame;
-	sf::Vector2i KeyFrameSize;
+	sf::Vector2i currentKeyFrame1;
+	sf::Vector2i keyFrameSize1;
+	sf::Vector2i currentKeyFrame2;
+	sf::Vector2i keyFrameSize2;
 
-	int SpriteSheetWidth;
+	int spriteSheetWidth1;
+	int spriteSheetWidth2;
 	float mAnimationSpeed;
 	float mKeyFrameDuration;
 private:
