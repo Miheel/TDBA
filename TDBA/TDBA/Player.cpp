@@ -14,7 +14,7 @@ Player::Player()
 	//Head
 	spriteSheet1.setTexture(texture);
 	spriteSheet1.setTextureRect(sf::IntRect(0, 25, 28, 25));
-	spriteSheet1.setPosition(194.5f, 183.0f);
+	spriteSheet1.setPosition(195.5f, 183.0f);
 
 	// Initialise animation variables head.
 	currentKeyFrame1 = sf::Vector2i(0, 25);

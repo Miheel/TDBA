@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TDBA", "TDBA\TDBA.vcxproj", "{2793417E-F2F0-49A6-8F29-5096010449B1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TDBA", "TDBA\TDBA.vcxproj", "{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Debug|x64.ActiveCfg = Debug|x64
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Debug|x64.Build.0 = Debug|x64
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Debug|x86.ActiveCfg = Debug|Win32
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Debug|x86.Build.0 = Debug|Win32
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Release|x64.ActiveCfg = Release|x64
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Release|x64.Build.0 = Release|x64
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Release|x86.ActiveCfg = Release|Win32
-		{2793417E-F2F0-49A6-8F29-5096010449B1}.Release|x86.Build.0 = Release|Win32
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Debug|x64.ActiveCfg = Debug|x64
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Debug|x64.Build.0 = Debug|x64
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Debug|x86.ActiveCfg = Debug|Win32
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Debug|x86.Build.0 = Debug|Win32
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Release|x64.ActiveCfg = Release|x64
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Release|x64.Build.0 = Release|x64
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Release|x86.ActiveCfg = Release|Win32
+		{ADFA63BF-4DA3-49E4-9AA6-22D2E85CA0C3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
