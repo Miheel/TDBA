@@ -1,20 +1,19 @@
 #ifndef BULLET_H
 #define BULLET_H
-#include"SFML\Graphics.hpp"
-
-class Bullet :public sf::Drawable
+#include "SFML\Graphics.hpp"
+#include "Entity.h"
+class Bullet :public Entity
 {
 public:
 	Bullet();
 	~Bullet();
 	void update(float dt, sf::RenderTarget &target);
-
+	void setDir(int direction);
 private:
 	float bulletSpeed = 10.0f;
-
-	sf::Texture BulletTexture;
-	sf::Sprite bulletSpriteSheet;
-
+	int attackDamage = 5;
+	int direction = 0;
+	
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif // !BULLET_H

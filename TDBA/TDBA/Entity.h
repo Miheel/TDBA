@@ -3,7 +3,7 @@
 #include <SFML\Graphics.hpp>
 class Entity : public sf::Drawable
 {
-public:
+protected:
 	sf::Texture texture;
 	sf::Sprite spriteSheet1;
 	sf::Sprite spriteSheet2;
@@ -17,7 +17,6 @@ public:
 	int spriteSheetWidth2;
 	float mAnimationSpeed;
 	float mKeyFrameDuration;
-private:
 
 };
 #endif // !ENTITY_H
