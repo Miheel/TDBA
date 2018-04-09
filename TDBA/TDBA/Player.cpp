@@ -61,7 +61,6 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 6;
 			currentKeyFrame2.y = 4;
-			
 		}
 	}
 	if (spriteSheet2.getPosition().x + spriteSheet2.getLocalBounds().width <= target.getSize().x &&

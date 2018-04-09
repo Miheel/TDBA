@@ -2,7 +2,7 @@
 #define GAME_HPP
 
 #include <SFML\Graphics.hpp>
-#include "Room.h"
+#include "Room.hpp"
 
 class Game : public sf::Drawable
 {

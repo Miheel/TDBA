@@ -1,8 +1,8 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 #include <SFML\Graphics.hpp>
-#include "Entity.h"
-#include "Bullet.h"
+#include "Entity.hpp"
+#include "Bullet.hpp"
 #include <vector>
 class Player: public Entity
 {
