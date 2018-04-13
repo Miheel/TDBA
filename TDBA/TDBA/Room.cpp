@@ -2,7 +2,7 @@
 #include <vector>
 Room::Room() :player(), enemy()
 {
-	if (roomBackgroundTex.loadFromFile("../Resources/background.jpg"))
+	if (roomBackgroundTex.loadFromFile("../Resources/Room.png"))
 	{
 		// Handle error
 	}
