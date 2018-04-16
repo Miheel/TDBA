@@ -8,7 +8,6 @@ public:
 	Bullet();
 	~Bullet();
 	void update(float dt, sf::RenderTarget &target);
-	void setDir(int direction);
 private:
 	float bulletSpeed = 10.0f;
 	int attackDamage = 5;

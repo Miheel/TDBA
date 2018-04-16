@@ -1,5 +1,5 @@
 #include "Bullet.hpp"
-
+#include "Random.hpp"
 Bullet::Bullet()
 {
 	sf::String bulletFile = "../Resources/tear.png";
@@ -34,18 +34,8 @@ void Bullet::update(float dt, sf::RenderTarget &target)
 	else if (this->direction == 4)
 	{
 		directionV.x = 1.0f;
-	}
-	else
-	{
-		directionV.x = 0.0f;
-		directionV.y = 0.0f;
-	}
+	}	
 	spriteSheet1.move(directionV * dt * bulletSpeed);
-}
-
-void Bullet::setDir(int direction)
-{
-	this->direction;
 }
 
 void Bullet::draw(sf::RenderTarget &target, sf::RenderStates states) const

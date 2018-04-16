@@ -4,7 +4,6 @@
 #include "Entity.hpp"
 #include "Bullet.hpp"
 #include <vector>
-#include <list>
 class Player: public Entity
 {
 public:
@@ -17,7 +16,7 @@ private:
 	int attackdamage = 5;
 	// Projectile Vector Array
 	std::vector<Bullet> bulletarr;
-
+	Bullet bullet;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif
