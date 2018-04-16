@@ -15,9 +15,14 @@ Bullet::~Bullet()
 {
 }
 
+void Bullet::setDir(int &direction)
+{
+	this->direction = direction;
+}
+
 void Bullet::update(float dt, sf::RenderTarget &target)
 {
-	sf::Vector2f directionV(1.0f, 0.0f);
+	sf::Vector2f directionV(0.0f, 0.0f);
 	if (this->direction == 1)
 	{
 		directionV.y = -1.0f;

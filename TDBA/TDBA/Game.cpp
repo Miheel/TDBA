@@ -5,10 +5,10 @@ Game::Game() :room()
 	
 }
 
-void Game::Update(float dt, sf::RenderTarget &target)
+void Game::Update(sf::RenderTarget &target)
 {
 	// Make sure everything in the game is updated (if needed).
-	room.Update(dt, target);
+	room.Update(Time.restart().asSeconds(), target);
 }
 
 void Game::draw(sf::RenderTarget &target, sf::RenderStates states) const

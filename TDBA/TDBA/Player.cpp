@@ -1,5 +1,4 @@
 #include "Player.hpp"
-
 Player::Player()
 {
 	sf::String fileName = "../Resources/The_lost.png";
@@ -35,9 +34,6 @@ Player::Player()
 
 	mAnimationSpeed = 0.2f;
 	mKeyFrameDuration = 0.0f;
-
-
-
 }
 
 Player::~Player()
@@ -110,39 +106,46 @@ void Player::Update(float dt, sf::RenderTarget &target)
 #pragma endregion
 
 #pragma region key shoot input	
-	sf::Clock clock;
-	sf::Time elapsed1 = clock.getElapsedTime();
-
-
-	if (elapsed1.asSeconds() >= this->attackSpeed)
-	{
-		clock.restart();
+	/*if ( dt>= attackSpeed)
+	{*/		
+		//Time.restart();
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{
+		{			
 			//4-5
 			//mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 5;
+			dir = 1;
+			bullet.setDir(dir);
 			bulletarr.push_back(bullet);
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			//6-7
 			//mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 7;
+			dir = 3;
+			bullet.setDir(dir);
+			bulletarr.push_back(bullet);
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
 			//1-0
 			//mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 1;
+			dir = 2;
+			bullet.setDir(dir);
+			bulletarr.push_back(bullet);
 		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			//2-3
 			//mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 3;
+			dir = 4;
+			bullet.setDir(dir);
+			bulletarr.push_back(bullet);
 		}
-	}
+	//}
 	
 
 #pragma endregion
@@ -169,7 +172,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 	}
 #pragma endregion
 
-	for (int i = 0; i < bulletarr.size(); i++)
+	for (unsigned int i = 0; i < bulletarr.size(); i++)
 	{
 		bulletarr[i].update(dt, target);
 	}
@@ -179,7 +182,7 @@ void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
 	target.draw(spriteSheet2, states);
 	target.draw(spriteSheet1, states);
-	for (int i = 0; i < bulletarr.size(); i++)
+	for (unsigned int i = 0; i < bulletarr.size(); i++)
 	{
 		target.draw(bulletarr[i], states);
 	}

@@ -9,11 +9,12 @@ class Game : public sf::Drawable
 public:
 	Game();
 
-	void Update(float dt, sf::RenderTarget &target);
+	void Update(sf::RenderTarget &target);
 
 private:
 	Room room;
-
+	sf::Clock Time;
+	sf::Time elapsed1 = Time.getElapsedTime();
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif

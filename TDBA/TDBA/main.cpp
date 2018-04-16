@@ -11,7 +11,6 @@ int __stdcall WINAPI WinMain(HINSTANCE hInstance,		// HANDLE TO AN INSTANCE.  Th
 	sf::RenderWindow window(sf::VideoMode(900, 506), "TDBA", sf::Style::Close | sf::Style::Titlebar);
 	window.setFramerateLimit(60);
 
-	sf::Clock gameTime;
 	Game game;
 	while (window.isOpen())
 	{
@@ -22,7 +21,7 @@ int __stdcall WINAPI WinMain(HINSTANCE hInstance,		// HANDLE TO AN INSTANCE.  Th
 				window.close();
 		}
 
-		game.Update(gameTime.restart().asSeconds(), window);
+		game.Update(window);
 		window.clear();
 		window.draw(game);
 		window.display();

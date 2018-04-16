@@ -7,6 +7,7 @@ class Bullet :public Entity
 public:
 	Bullet();
 	~Bullet();
+	void setDir(int &direction);
 	void update(float dt, sf::RenderTarget &target);
 private:
 	float bulletSpeed = 180.0f;
