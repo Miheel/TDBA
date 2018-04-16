@@ -2,6 +2,6 @@
 #define RANDOM_H
 #include <stdlib.h>
 #include <time.h>
-	int generateRandom(int max);
+int generateRandom(int max);
 
 #endif // !RANDOM_H

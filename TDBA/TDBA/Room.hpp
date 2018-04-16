@@ -3,6 +3,7 @@
 #include "SFML\Graphics.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include <list>
 class Room : public sf::Drawable
 {
 public:
@@ -16,8 +17,6 @@ private:
 	int counter;
 	Player player;
 	Enemy enemy;
-	std::vector<Enemy>::const_iterator enemyiter;
-	std::vector<Enemy> enemyArr;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif // !ROOM_H

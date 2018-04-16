@@ -6,7 +6,7 @@ Bullet::Bullet()
 	texture.loadFromFile(bulletFile);
 	spriteSheet1.setTexture(texture);
 	spriteSheet1.setTextureRect(sf::IntRect(0, 0, 13, 13));
-	spriteSheet1.setPosition(205.0f, 180.0f);
+
 	this->direction = direction;
 	this->attackDamage = attackDamage;
 	this->bulletSpeed = bulletSpeed;
@@ -19,7 +19,7 @@ Bullet::~Bullet()
 void Bullet::update(float dt, sf::RenderTarget &target)
 {
 	sf::Vector2f directionV(0.0f, 0.0f);
-	if (this->direction==1)
+	if (this->direction == 1)
 	{
 		directionV.y = -1.0f;
 	}
@@ -27,13 +27,18 @@ void Bullet::update(float dt, sf::RenderTarget &target)
 	{
 		directionV.y = 1.0f;
 	}
-	if (this->direction == 3)
+	else if (this->direction == 3)
 	{
 		directionV.x = -1.0f;
 	}
-	if (this->direction == 4)
+	else if (this->direction == 4)
 	{
 		directionV.x = 1.0f;
+	}
+	else
+	{
+		directionV.x = 0.0f;
+		directionV.y = 0.0f;
 	}
 	spriteSheet1.move(directionV * dt * bulletSpeed);
 }

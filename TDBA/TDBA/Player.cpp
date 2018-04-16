@@ -53,7 +53,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 
 	// Handle input from arrow keys and update direction and animation
 #pragma region key move input
-	if (spriteSheet1.getPosition().x >= 0 && spriteSheet2.getPosition().x >= 0)
+	if (spriteSheet1.getPosition().x >= 40 && spriteSheet2.getPosition().x >= 40)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
@@ -63,8 +63,8 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame2.y = 4;
 		}
 	}
-	if (spriteSheet2.getPosition().x + spriteSheet2.getLocalBounds().width <= target.getSize().x &&
-		spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width <= target.getSize().x)
+	if (spriteSheet2.getPosition().x + spriteSheet2.getLocalBounds().width <= target.getSize().x-40 &&
+		spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width <= target.getSize().x-40)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
@@ -75,7 +75,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 		}
 	}
 
-	if (spriteSheet2.getPosition().y >= 0 && spriteSheet1.getPosition().y >= 0)
+	if (spriteSheet2.getPosition().y >= 40 && spriteSheet1.getPosition().y >= 25)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
@@ -86,8 +86,8 @@ void Player::Update(float dt, sf::RenderTarget &target)
 		}
 	}
 
-	if (spriteSheet2.getPosition().y + spriteSheet2.getLocalBounds().height <= target.getSize().y &&
-		spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height <= target.getSize().y)
+	if (spriteSheet2.getPosition().y + spriteSheet2.getLocalBounds().height <= target.getSize().y-40 &&
+		spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height <= target.getSize().y-40)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
@@ -111,28 +111,27 @@ void Player::Update(float dt, sf::RenderTarget &target)
 		//4-5
 		//mKeyFrameDuration += dt;
 		currentKeyFrame1.x = 5;
-		bullet.setDir(1);
+		Bullet *temp = new Bullet();
+		bulletarr.push_back(*temp);
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 		//6-7
 		//mKeyFrameDuration += dt;
 		currentKeyFrame1.x = 7;
-		bullet.setDir(3);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		//1-0
 		//mKeyFrameDuration += dt;
 		currentKeyFrame1.x = 1;
-		bullet.setDir(2);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		//2-3
 		//mKeyFrameDuration += dt;
 		currentKeyFrame1.x = 3;
-		bullet.setDir(4);
 	}
 
 #pragma endregion
@@ -164,5 +163,9 @@ void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
 	target.draw(spriteSheet2, states);
 	target.draw(spriteSheet1, states);
+	for (int i = 0; i < bulletarr.size(); i++)
+	{
+		target.draw(bulletarr[i], states);
+	}
 	target.getSize().x;
 }

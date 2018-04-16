@@ -22,39 +22,35 @@ void Enemy::Update(float dt, sf::RenderTarget & target)
 {
 	sf::Vector2f direction(0.0f, 0.0f);
 	directionrng = generateRandom(4);
-	if (spriteSheet1.getPosition().x >= 0)
+	if (spriteSheet1.getPosition().x >= 40)
 	{
 		if (directionrng == 1)//left
 		{
 			direction.x = -1.0f;
-			spriteSheet1.move(direction * movementSpeed * dt);
 		}
 	}
-	if (spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width <= target.getSize().x)
+	if (spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width <= target.getSize().x - 40)
 	{
 		if (directionrng == 2)//right
 		{
 			direction.x = 1.0f;
-			spriteSheet1.move(direction * movementSpeed * dt);
 		}
 	}
-	if (spriteSheet1.getPosition().y >= 0)
+	if (spriteSheet1.getPosition().y >= 40)
 	{
 		if (directionrng == 3)//up
 		{
 			direction.y = -1.0f;
-			spriteSheet1.move(direction * movementSpeed * dt);
 		}
 	}
-	if (spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height <= target.getSize().y)
+	if (spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height <= target.getSize().y - 40)
 	{
 		if (directionrng == 4)//down
 		{
 			direction.y = 1.0f;
-			spriteSheet1.move(direction * movementSpeed * dt);
 		}
 	}
-	//spriteSheet1.move(direction * movementSpeed * dt);
+	spriteSheet1.move(direction * movementSpeed * dt);
 }
 
 void Enemy::draw(sf::RenderTarget & target, sf::RenderStates states) const
