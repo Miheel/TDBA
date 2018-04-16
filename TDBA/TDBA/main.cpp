@@ -8,7 +8,7 @@ int __stdcall WINAPI WinMain(HINSTANCE hInstance,		// HANDLE TO AN INSTANCE.  Th
 	LPSTR szCmdLine,									// Command line arguments.  similar to argv in standard C programs
 	int iCmdShow)										// Start window maximized, minimized, etc.
 {
-	sf::RenderWindow window(sf::VideoMode(900, 506), "TDBA", sf::Style::Close | sf::Style::Titlebar);
+	sf::RenderWindow window(sf::VideoMode(winx, winy), "TDBA", sf::Style::Close | sf::Style::Titlebar);
 	window.setFramerateLimit(60);
 
 	Game game;
