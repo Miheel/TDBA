@@ -9,7 +9,7 @@ public:
 	~Bullet();
 	void update(float dt, sf::RenderTarget &target);
 private:
-	float bulletSpeed = 10.0f;
+	float bulletSpeed = 180.0f;
 	int attackDamage = 5;
 	int direction = 0;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;

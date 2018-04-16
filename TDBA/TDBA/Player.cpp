@@ -35,6 +35,9 @@ Player::Player()
 
 	mAnimationSpeed = 0.2f;
 	mKeyFrameDuration = 0.0f;
+
+
+
 }
 
 Player::~Player()
@@ -71,7 +74,6 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			direction.x = 1.0f;
 			mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 2;
-			//boddyCurrentKeyFrame.y = 4;
 		}
 	}
 
@@ -97,40 +99,51 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame2.y = 4;
 		}
 	}
+
 	if (direction.y == 0.0f && direction.x == 0.0f)
 	{
 		currentKeyFrame1.x = 0;
 	}
+
 	spriteSheet1.move(direction * movementSpeed * dt);
 	spriteSheet2.move(direction * movementSpeed * dt);
 #pragma endregion
 
-#pragma region key shoot input
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+#pragma region key shoot input	
+	sf::Clock clock;
+	sf::Time elapsed1 = clock.getElapsedTime();
+
+
+	if (elapsed1.asSeconds() >= this->attackSpeed)
 	{
-		//4-5
-		//mKeyFrameDuration += dt;
-		currentKeyFrame1.x = 5;
-		bulletarr.push_back(bullet);
+		clock.restart();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			//4-5
+			//mKeyFrameDuration += dt;
+			currentKeyFrame1.x = 5;
+			bulletarr.push_back(bullet);
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			//6-7
+			//mKeyFrameDuration += dt;
+			currentKeyFrame1.x = 7;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			//1-0
+			//mKeyFrameDuration += dt;
+			currentKeyFrame1.x = 1;
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			//2-3
+			//mKeyFrameDuration += dt;
+			currentKeyFrame1.x = 3;
+		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		//6-7
-		//mKeyFrameDuration += dt;
-		currentKeyFrame1.x = 7;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		//1-0
-		//mKeyFrameDuration += dt;
-		currentKeyFrame1.x = 1;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		//2-3
-		//mKeyFrameDuration += dt;
-		currentKeyFrame1.x = 3;
-	}
+	
 
 #pragma endregion
 

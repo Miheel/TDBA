@@ -14,6 +14,8 @@ public:
 private:
 	float movementSpeed = 180.0f;
 	int attackdamage = 5;
+	float attackSpeed = 0.3;
+
 	// Projectile Vector Array
 	std::vector<Bullet> bulletarr;
 	Bullet bullet;

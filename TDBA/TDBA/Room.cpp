@@ -16,7 +16,6 @@ void Room::Update(float dt, sf::RenderTarget & target)
 
 	player.Update(dt, target);
 	enemy.Update(dt, target);
-
 }
 
 void Room::draw(sf::RenderTarget & target, sf::RenderStates states) const

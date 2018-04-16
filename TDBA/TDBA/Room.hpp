@@ -14,7 +14,6 @@ private:
 	sf::Sprite roomBackgroundSprite;
 	int roomX;
 	int roomY;
-	int counter;
 	Player player;
 	Enemy enemy;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
