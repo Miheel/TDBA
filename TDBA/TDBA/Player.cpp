@@ -45,7 +45,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 	sf::Vector2f direction(0.0f, 0.0f);
 
 	mKeyFrameDuration += dt;
-	shootDuration += dt;
+	shotDuration += dt;
 	currentKeyFrame1.y = 1;
 	currentKeyFrame2.y = 4;
 	posX = spriteSheet1.getPosition().x;
