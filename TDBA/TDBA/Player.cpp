@@ -11,8 +11,7 @@ Player::Player()
 	//Head
 	spriteSheet1.setTexture(texture);
 	spriteSheet1.setTextureRect(sf::IntRect(0, 25, 28, 25));
-	spriteSheet1.setPosition(195.5f, 183.0f);
-
+	spriteSheet1.setPosition(450.0f, 253.0f);
 	// Initialise animation variables head.
 	currentKeyFrame1 = sf::Vector2i(0, 25);
 	keyFrameSize1 = sf::Vector2i(28, 25);
@@ -23,7 +22,7 @@ Player::Player()
 	//Boddy
 	spriteSheet2.setTexture(texture);
 	spriteSheet2.setTextureRect(sf::IntRect(0, 76, 19, 19));
-	spriteSheet2.setPosition(200.0f, 200.0f);
+	spriteSheet2.setPosition(455.0f, 270.0f);
 
 	// Initialise animation variables boddy.
 	currentKeyFrame2 = sf::Vector2i(0, 76);
@@ -46,9 +45,11 @@ void Player::Update(float dt, sf::RenderTarget &target)
 	sf::Vector2f direction(0.0f, 0.0f);
 
 	mKeyFrameDuration += dt;
+	shootDuration += dt;
 	currentKeyFrame1.y = 1;
 	currentKeyFrame2.y = 4;
-
+	posX = spriteSheet1.getPosition().x;
+	posY = spriteSheet1.getPosition().y;
 
 	// Handle input from arrow keys and update direction and animation
 #pragma region key move input
@@ -106,16 +107,17 @@ void Player::Update(float dt, sf::RenderTarget &target)
 #pragma endregion
 
 #pragma region key shoot input	
-	/*if ( dt>= attackSpeed)
-	{*/		
-		//Time.restart();
+	if (shotDuration >= timeSinceLastBullet)
+	{
+		shotDuration = 0;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{			
+		{
 			//4-5
 			//mKeyFrameDuration += dt;
 			currentKeyFrame1.x = 5;
 			dir = 1;
 			bullet.setDir(dir);
+			bullet.setPos(posX, posY);
 			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -125,6 +127,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame1.x = 7;
 			dir = 3;
 			bullet.setDir(dir);
+			bullet.setPos(posX, posY);
 			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
@@ -134,6 +137,7 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame1.x = 1;
 			dir = 2;
 			bullet.setDir(dir);
+			bullet.setPos(posX, posY);
 			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
@@ -143,11 +147,10 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame1.x = 3;
 			dir = 4;
 			bullet.setDir(dir);
+			bullet.setPos(posX, posY);
 			bulletarr.push_back(bullet);
 		}
-	//}
-	
-
+	}
 #pragma endregion
 
 #pragma region Update animation boddy

@@ -12,7 +12,7 @@ Room::Room() :player(), enemy()
 	}
 }
 
-void Room::Update(float dt, sf::RenderTarget & target)
+void Room::Update(float dt, sf::RenderTarget &target)
 {
 	this->roomX = target.getSize().x;
 	this->roomY = target.getSize().y;

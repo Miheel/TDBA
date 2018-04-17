@@ -18,7 +18,7 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::Update(float dt, sf::RenderTarget & target)
+void Enemy::Update(float dt, sf::RenderTarget &target)
 {
 	sf::Vector2f direction(0.0f, 0.0f);
 	directionrng = generateRandom(4);

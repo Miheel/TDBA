@@ -6,6 +6,9 @@ Bullet::Bullet()
 	spriteSheet1.setTexture(texture);
 	spriteSheet1.setTextureRect(sf::IntRect(0, 0, 13, 13));
 
+
+	this->objX = objX;
+	this->objY = objY;
 	this->direction = direction;
 	this->attackDamage = attackDamage;
 	this->bulletSpeed = bulletSpeed;
@@ -18,6 +21,13 @@ Bullet::~Bullet()
 void Bullet::setDir(int &direction)
 {
 	this->direction = direction;
+}
+
+void Bullet::setPos(float &objX, float &objY)
+{
+	this->objX = objX;
+	this->objY = objY;	
+	spriteSheet1.setPosition(this->objX, this->objY);
 }
 
 void Bullet::update(float dt, sf::RenderTarget &target)

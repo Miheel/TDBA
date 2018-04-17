@@ -13,8 +13,7 @@ public:
 
 private:
 	Room room;
-	sf::Clock Time;
-	sf::Time elapsed1 = Time.getElapsedTime();
+	sf::Clock GameTime;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif
