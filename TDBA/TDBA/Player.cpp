@@ -137,6 +137,9 @@ void Player::Update(float dt, sf::RenderTarget &target)
 			currentKeyFrame1.x = 3;
 			dir = 4;
 		}
+#pragma endregion
+
+#pragma region Update shoting duration
 		if (shotDuration >= timeSinceLastBullet)
 		{
 			shotDuration = 0;
@@ -187,11 +190,13 @@ void Player::Update(float dt, sf::RenderTarget &target)
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
+	
 	target.draw(spriteSheet2, states);
 	target.draw(spriteSheet1, states);
-	for (unsigned int i = 0; i < bulletarr.size(); i++)
+for (unsigned int i = 0; i < bulletarr.size(); i++)
 	{
 		target.draw(bulletarr[i], states);
 	}
+
 	target.getSize().x;
 }

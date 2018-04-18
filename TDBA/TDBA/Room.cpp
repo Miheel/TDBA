@@ -6,10 +6,7 @@ Room::Room() :player(), enemy()
 		// Handle error
 	}
 	roomBackgroundSprite.setTexture(roomBackgroundTex);
-	for (int i = 0; i < 4; i++)
-	{
-		enemyarr.push_back(enemy);
-	}
+	
 }
 
 void Room::Update(float dt, sf::RenderTarget &target)
@@ -18,7 +15,18 @@ void Room::Update(float dt, sf::RenderTarget &target)
 	this->roomY = target.getSize().y;
 
 	player.Update(dt, target);
-		
+
+	if (lv == 1)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			posX = 100.0f;
+			posY = 100.0f*(i + 1);
+			enemy.setPos(posX, posY);
+			enemyarr.push_back(enemy);
+		}
+		lv++;
+	}
 	for (unsigned int i = 0; i < enemyarr.size(); i++)
 	{
 		enemyarr[i].Update(dt, target);

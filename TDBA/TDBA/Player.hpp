@@ -14,7 +14,7 @@ public:
 private:
 	float movementSpeed = 180.0f;
 	int attackdamage = 5;
-	float timeSinceLastBullet = 0.3f;
+	float timeSinceLastBullet = 0.5f;
 	float shotDuration;
 	int dir = 0;//Up 1 Down 2 Left 3 Right 4
 	float posX = 0;

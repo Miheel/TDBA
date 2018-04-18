@@ -33,6 +33,7 @@ void Bullet::setPos(float &objX, float &objY)
 void Bullet::update(float dt, sf::RenderTarget &target)
 {
 	sf::Vector2f directionV(0.0f, 0.0f);
+
 	if (this->direction == 1)
 	{
 		directionV.y = -1.0f;
