@@ -15,8 +15,11 @@ private:
 	float movementSpeed = 180.0f;
 	int attackdamage = 5;
 	int directionrng = 0;
+	int movement;
+
 	float objX = 0;
 	float objY = 0;
+	sf::Vector2f direction;
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif // !ENEMY_H

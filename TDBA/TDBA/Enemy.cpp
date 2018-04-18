@@ -36,9 +36,14 @@ void Enemy::setPos(float & objX, float & objY)
 
 void Enemy::Update(float dt, sf::RenderTarget &target)
 {
-	sf::Vector2f direction(0.0f, 0.0f);
-
-	directionrng = generateRandom(4);
+	if (movement >= spriteSheet1.getLocalBounds().width)
+	{
+		direction.x = 0.0f;
+		direction.y = 0.0f;
+		directionrng = generateRandom(4);
+		movement = 0;
+	}
+	movement++;
 
 	if (spriteSheet1.getPosition().x >= 40)
 	{
@@ -69,6 +74,7 @@ void Enemy::Update(float dt, sf::RenderTarget &target)
 		}
 	}
 	spriteSheet1.move(direction * movementSpeed * dt);
+
 }
 
 void Enemy::draw(sf::RenderTarget & target, sf::RenderStates states) const
