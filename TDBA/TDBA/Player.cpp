@@ -107,60 +107,64 @@ void Player::Update(float dt, sf::RenderTarget &target)
 #pragma endregion
 
 #pragma region key shoot input	
-	if (shotDuration >= timeSinceLastBullet)
-	{
-		shotDuration = 0;
+		
+		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
 			//4-5
-			//mKeyFrameDuration += dt;
+			shotDuration += dt;
 			currentKeyFrame1.x = 5;
 			dir = 1;
-			bullet.setDir(dir);
-			bullet.setPos(posX, posY);
-			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			//6-7
-			//mKeyFrameDuration += dt;
+			shotDuration += dt;
 			currentKeyFrame1.x = 7;
 			dir = 3;
-			bullet.setDir(dir);
-			bullet.setPos(posX, posY);
-			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
 			//1-0
-			//mKeyFrameDuration += dt;
+			shotDuration += dt;
 			currentKeyFrame1.x = 1;
 			dir = 2;
-			bullet.setDir(dir);
-			bullet.setPos(posX, posY);
-			bulletarr.push_back(bullet);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			//2-3
-			//mKeyFrameDuration += dt;
+			shotDuration += dt;
 			currentKeyFrame1.x = 3;
 			dir = 4;
-			bullet.setDir(dir);
-			bullet.setPos(posX, posY);
-			bulletarr.push_back(bullet);
 		}
-	}
+		if (shotDuration >= timeSinceLastBullet)
+		{
+			shotDuration = 0;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			{
+				bullet.setDir(dir);
+				bullet.setPos(posX, posY);
+				bulletarr.push_back(bullet);
+				currentKeyFrame1.x++;
+				if (currentKeyFrame1.x >= spriteSheetWidth1)
+				{
+					currentKeyFrame1.x = 0;
+				}
+				spriteSheet1.setTextureRect(sf::IntRect(currentKeyFrame1.x*keyFrameSize1.x,
+					currentKeyFrame1.y*keyFrameSize1.y, keyFrameSize1.x, keyFrameSize1.y));
+			}
+		}
 #pragma endregion
 
 #pragma region Update animation boddy
 	if (mKeyFrameDuration >= mAnimationSpeed)
 	{
-		/*headCurrentKeyFrame.x++;
-		if (headCurrentKeyFrame.x >= headSpriteSheetWidth)
-		{
-			headCurrentKeyFrame.x = 0;
-		}*/
+		//headCurrentKeyFrame.x++;
+		//if (headCurrentKeyFrame.x >= headSpriteSheetWidth)
+		//{
+		//	headCurrentKeyFrame.x = 0;
+		//}
 		spriteSheet1.setTextureRect(sf::IntRect(currentKeyFrame1.x*keyFrameSize1.x,
 			currentKeyFrame1.y*keyFrameSize1.y, keyFrameSize1.x, keyFrameSize1.y));
 
