@@ -76,21 +76,24 @@ void Enemy::Update(float dt, sf::RenderTarget &target)
 	spriteSheet1.move(direction * movementSpeed * dt);
 }
 
-int Enemy::isInsideTarget(sf::RenderTarget &target)
+inline int Enemy::isInsideTarget(sf::RenderTarget & target)
 {
 	int dir = 0;
 	if (spriteSheet1.getPosition().x < 0)
 	{
 		dir = 1;
 	}
+
 	else if (spriteSheet1.getPosition().x + spriteSheet1.getLocalBounds().width >= target.getSize().x)
 	{
 		dir = 2;
 	}
+
 	else if (spriteSheet1.getPosition().y < 0)
 	{
 		dir = 3;
 	}
+
 	else if (spriteSheet1.getPosition().y + spriteSheet1.getLocalBounds().height >= target.getSize().y)
 	{
 		dir = 4;
