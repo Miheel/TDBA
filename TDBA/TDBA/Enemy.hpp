@@ -20,6 +20,7 @@ private:
 	float objX = 0;
 	float objY = 0;
 	sf::Vector2f direction;
+	int isInsideTarget(sf::RenderTarget &target);
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 #endif // !ENEMY_H
