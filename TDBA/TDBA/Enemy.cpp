@@ -11,7 +11,6 @@ Enemy::Enemy()
 	currentKeyFrame1 = sf::Vector2i(0, 25);
 	keyFrameSize1 = sf::Vector2i(28, 25);
 	spriteSheetWidth1 = 4;
-	spriteSheet1.setPosition(100, 100);
 
 	this->objX = objX;
 	this->objY = objY;

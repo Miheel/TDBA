@@ -20,8 +20,16 @@ void Room::Update(float dt, sf::RenderTarget &target)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			posX = 100.0f;
-			posY = 100.0f*(i + 1);
+			if (i < 2)
+			{
+				posX = (float)(((roomX / 2) -14) -(roomX / 4))*(i + 1);
+				posY = (float)(roomY / 4);
+			}
+			else if (i >= 2)
+			{
+				posX = (float)((roomX / 2) - (roomY / 4))*(i + 1);
+				posY = (float)(roomX / 4);
+			}
 			enemy.setPos(posX, posY);
 			enemyarr.push_back(enemy);
 		}
@@ -29,7 +37,7 @@ void Room::Update(float dt, sf::RenderTarget &target)
 	}
 	for (unsigned int i = 0; i < enemyarr.size(); i++)
 	{
-		enemyarr[i].Update(dt, target);
+		//enemyarr[i].Update(dt, target);
 	}
 }
 
