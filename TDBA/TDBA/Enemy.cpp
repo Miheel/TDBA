@@ -21,11 +21,6 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::setDir(int &directionrng)
-{
-	this->directionrng = directionrng;
-}
-
 void Enemy::setPos(float & objX, float & objY)
 {
 	this->objX = objX;

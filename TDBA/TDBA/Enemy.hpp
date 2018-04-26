@@ -8,7 +8,6 @@ class Enemy :public Entity
 public:
 	Enemy();
 	~Enemy();
-	void setDir(int &directionrng);
 	void setPos(float &objX, float &objY);
 	void Update(float dt, sf::RenderTarget &target);
 private:

@@ -26,15 +26,21 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="screen_0.cpp" />
+    <ClCompile Include="screen_1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.hpp" />
+    <ClInclude Include="cScreen.hpp" />
     <ClInclude Include="Enemy.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Screens.h" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Random.hpp" />
     <ClInclude Include="Room.hpp" />
+    <ClInclude Include="screen_0.hpp" />
+    <ClInclude Include="screen_1.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{adfa63bf-4da3-49e4-9aa6-22d2e85ca0c3}</ProjectGuid>
