@@ -8,3 +8,5 @@ sfml c++
 2h Fler enemies på skärmen som ska röra på sig individuelt (detta funkar inte i nuläget)
 
 4h Enemies rör sig individuelt och stannar inuti fönstret, placerade i korekt formation
+
+4h Meny system adapterat från sfml dokumentation (ska skriva om)
