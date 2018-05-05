@@ -5,7 +5,7 @@ Game::Game() :room()
 	
 }
 
-void Game::Update(sf::RenderTarget &target)
+void Game::update(sf::RenderTarget &target)
 {
 	// Make sure everything in the game is updated (if needed).
 	room.Update(GameTime.restart().asSeconds(), target);

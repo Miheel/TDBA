@@ -9,7 +9,7 @@ class Game : public sf::Drawable
 public:
 	Game();
 
-	void Update(sf::RenderTarget &target);
+	void update(sf::RenderTarget &target);
 
 private:
 	Room room;

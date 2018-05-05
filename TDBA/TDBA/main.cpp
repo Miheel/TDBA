@@ -10,10 +10,10 @@ int __stdcall WINAPI WinMain(HINSTANCE hInstance,		// HANDLE TO AN INSTANCE.  Th
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	srand(unsigned int(time(NULL)));
-	sf::RenderWindow window(sf::VideoMode(900, 506), "TDBA", sf::Style::Close | sf::Style::Titlebar);
+	sf::RenderWindow window(sf::VideoMode(900, 506), "");
+	Game game;
 	window.setFramerateLimit(60);
 
-	Game game;
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -22,11 +22,11 @@ int __stdcall WINAPI WinMain(HINSTANCE hInstance,		// HANDLE TO AN INSTANCE.  Th
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-
-		game.Update(window);
+		game.update(window);
 		window.clear();
 		window.draw(game);
 		window.display();
 	}
+
 	return 0;
 }

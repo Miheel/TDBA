@@ -18,6 +18,7 @@ Player::Player()
 	spriteSheetWidth1 = 8;
 #pragma endregion
 
+
 #pragma region Boddy Texture
 	//Boddy
 	spriteSheet2.setTexture(texture);
@@ -33,6 +34,8 @@ Player::Player()
 
 	mAnimationSpeed = 0.2f;
 	mKeyFrameDuration = 0.0f;
+	shotDelay = std::floor(16 - 6 * std::sqrt(totalShots*1.3 + 1));
+	shotsPerSec = 30 / (shotDelay + 1);
 }
 
 Player::~Player()
@@ -140,12 +143,14 @@ void Player::Update(float dt, sf::RenderTarget &target)
 #pragma endregion
 
 #pragma region Update shoting duration
-		if (shotDuration >= timeSinceLastBullet)
+		
+		if (shotDuration >= shotsPerSec)
 		{
 			shotDuration = 0;
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 			{
+
 				bullet.setDir(dir);
 				bullet.setPos(posX, posY);
 				bulletarr.push_back(bullet);
