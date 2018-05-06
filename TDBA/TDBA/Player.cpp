@@ -195,10 +195,10 @@ void Player::Update(float dt, sf::RenderTarget &target)
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-	
+
 	target.draw(spriteSheet2, states);
 	target.draw(spriteSheet1, states);
-for (unsigned int i = 0; i < bulletarr.size(); i++)
+	for (unsigned int i = 0; i < bulletarr.size(); i++)
 	{
 		target.draw(bulletarr[i], states);
 	}
